@@ -1,11 +1,16 @@
 import React from 'react';
-import {theme} from './app/theme';
 import {ThemeProvider} from 'styled-components';
+import {Provider} from 'react-redux';
+
+import {theme} from './app/theme';
+import store from './app/store';
 import Routes from './app/routes';
 
 const App = () => (
   <ThemeProvider theme={theme.light}>
-    <Routes />
+    <Provider store={store}>
+      <Routes />
+    </Provider>
   </ThemeProvider>
 );
 
