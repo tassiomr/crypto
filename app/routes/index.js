@@ -1,7 +1,7 @@
-import {createAppContainer} from 'react-navigation';
-import {createStackNavigator} from 'react-navigation-stack';
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 
-import {HomeScreen, CoinDetails} from '../screens';
+import { HomeScreen, CoinDetails } from '../screens';
 
 const AppNavigator = createStackNavigator({
   Home: {

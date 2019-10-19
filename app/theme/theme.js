@@ -1,5 +1,5 @@
-import {palette} from './palette';
-import {spacing, width, height} from './spacing';
+import { palette } from './palette';
+import { spacing, width, height } from './spacing';
 
 const spaces = {
   ...spacing,

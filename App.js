@@ -1,8 +1,8 @@
 import React from 'react';
-import {ThemeProvider} from 'styled-components';
-import {Provider} from 'react-redux';
+import { ThemeProvider } from 'styled-components';
+import { Provider } from 'react-redux';
 
-import {theme} from './app/theme';
+import { theme } from './app/theme';
 import store from './app/store';
 import Routes from './app/routes';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
 
-export const HomeScreen = props => (
+export const HomeScreen = (props) => (
   <View>
     <Text>Home</Text>
     <Button onPress={() => props.navigation.navigate('Coin')}>
@@ -16,10 +16,10 @@ const View = styled.View`
   align-items: center;
 `;
 const Text = styled.Text`
-  color: ${props => props.theme.title};
+  color: ${(props) => props.theme.title};
 `;
 
 const Button = styled.TouchableOpacity`
-  padding: ${props => props.theme.spaces.default}px;
-  background-color: ${props => props.theme.success};
+  padding: ${(props) => props.theme.spaces.default}px;
+  background-color: ${(props) => props.theme.success};
 `;
