@@ -1,6 +1,6 @@
-import {Dimensions} from 'react-native';
+import { Dimensions } from 'react-native';
 
-const {width, height} = Dimensions.get('window');
+const { width, height } = Dimensions.get('window');
 
 export const spacing = {
   zero: 0,
@@ -11,4 +11,4 @@ export const spacing = {
   extraLarge: 32,
 };
 
-export {width, height};
+export { width, height };
