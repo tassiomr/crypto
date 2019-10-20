@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "axios": "^0.19.0",
+    "prop-types": "^15.7.2",
     "react": "16.9.0",
     "react-native": "0.61.2",
     "react-native-gesture-handler": "^1.4.1",
@@ -40,7 +41,6 @@
     "jest": "^24.9.0",
     "metro-react-native-babel-preset": "^0.56.0",
     "prettier": "^1.18.2",
-    "prop-types": "^15.7.2",
     "react-test-renderer": "16.9.0"
   },
   "jest": {
