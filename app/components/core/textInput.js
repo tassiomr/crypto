@@ -15,6 +15,7 @@ TextInput.propTypes = {
 
 const StyledTextInput = styled.TextInput`
   height: 45;
+  width: 100%;
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 5;
   padding-left: ${(props) => props.theme.spaces.default};
