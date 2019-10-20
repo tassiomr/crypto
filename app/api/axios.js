@@ -1,24 +1,30 @@
 import axios from 'axios';
-import { END_POINTS } from './endpoints';
+import { userAgent } from '../utils/deviceInfo';
+import { baseURL } from './endpoints';
 
-axios.create({
-  baseURL: END_POINTS.BASE_URL,
+const api = axios.create({
+  baseURL,
 });
 
-axios.interceptors.request.use(
-  async (config) => config,
+api.interceptors.request.use(
+  async (config) => {
+    const requestConfig = config;
+    const agentConfig = await userAgent;
+    requestConfig.headers['User-Agent'] = agentConfig;
+
+    return requestConfig;
+  },
   (error) => Promise.reject(error),
 );
 
-axios.interceptors.response.use(
-  (response) => response,
-  (error) => {
-    if (error.response.status === 401) {
-      const requestConfig = error.config;
-      return axios(requestConfig);
+api.interceptors.response.use(
+  (response) => {
+    if (response.status === 200) {
+      return response.data;
     }
-    return Promise.reject(error);
+    return Promise.reject(response);
   },
+  (error) => Promise.reject(error),
 );
 
-export default axios;
+export default api;
