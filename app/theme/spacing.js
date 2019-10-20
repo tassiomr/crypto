@@ -9,6 +9,11 @@ export const spacing = {
   default: 16,
   large: 24,
   extraLarge: 32,
+  iconSize: {
+    small: 12,
+    default: 16,
+    large: 20,
+  },
 };
 
 export { width, height };
