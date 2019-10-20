@@ -9,8 +9,6 @@ const spaces = {
 };
 
 const baseTheme = {
-  title: palette.white,
-  subTitle: palette.white,
   spaces,
   typography,
 };
@@ -23,6 +21,8 @@ const light = {
   success: palette.green,
   primary: palette.tomato,
   default: palette.blue,
+  title: palette.grey,
+  subTitle: palette.lightGrey,
 };
 
 const dark = {
@@ -33,6 +33,8 @@ const dark = {
   success: palette.darkGreen,
   primary: palette.tomato,
   default: palette.darkBlue,
+  title: palette.white,
+  subTitle: palette.white,
 };
 
 export const theme = {

@@ -51,7 +51,7 @@ export const HomeScreen = (props) => {
         renderItem={({ item }) => (
           <ListItem
             item={item}
-            onPress={() => props.navigation.navigate('Coin', { item })}
+            onPress={() => props.navigation.navigate('Coin', { coin: item })}
           />
         )}
       />
