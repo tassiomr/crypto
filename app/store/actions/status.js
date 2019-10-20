@@ -13,6 +13,7 @@ export const getStatusSuccess = (data) => ({
   },
 });
 
-export const getStatusFailure = () => ({
+export const getStatusFailure = (error) => ({
   type: FAILURE_GET_STATUS,
+  payload: { error },
 });

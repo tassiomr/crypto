@@ -15,8 +15,9 @@ export const successGetCoins = (data) => ({
   payload: { data },
 });
 
-export const failureGetCoins = () => ({
+export const failureGetCoins = (error) => ({
   type: FAILURE_GET_COINS,
+  payload: { error },
 });
 
 export const getCoinDetails = () => ({
@@ -28,6 +29,7 @@ export const successGetCoinDetails = (data) => ({
   payload: { data },
 });
 
-export const failureGetCoinDetails = () => ({
+export const failureGetCoinDetails = (error) => ({
   type: FAILURE_GET_COIN_DETAILS,
+  payload: { error },
 });
