@@ -1,25 +1,33 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components/native';
+import { Screen } from '../components/core/screen';
+import { Text } from '../components/core/text';
+import { coinDetails } from '../store/useCases/coins';
+import { Image } from '../components/core/image';
 
-export const CoinDetails = (props) => (
-  <View>
-    <Text>Coin</Text>
-    <Button onPress={() => props.navigation.navigate('Home')}>
-      <Text>Go to screen 2</Text>
-    </Button>
-  </View>
-);
+export const CoinDetails = (props) => {
+  const { coins } = useSelector((state) => state);
+  const coin = props.navigation.getParam('coin', {});
+  const dispatch = useDispatch();
 
-const View = styled.View`
-  flex: 1;
+  useEffect(() => {
+    dispatch(coinDetails(coin.id));
+  }, []);
+
+  return (
+    <Screen isLoading={coins.isLoading}>
+      <Wrapper>
+        <Image source={coins?.coinDetails?.image?.small} />
+        <Text.Title text={coin.name} />
+      </Wrapper>
+      <Text.Descriptions text={JSON.stringify(coins.coinDetails)} />
+    </Screen>
+  );
+};
+
+const Wrapper = styled.View`
+  width: 100%;
   justify-content: center;
   align-items: center;
-`;
-const Text = styled.Text`
-  color: ${(props) => props.theme.title};
-`;
-
-const Button = styled.TouchableOpacity`
-  padding: ${(props) => props.theme.spaces.default}px;
-  background-color: ${(props) => props.theme.success};
 `;
