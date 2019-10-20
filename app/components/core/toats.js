@@ -10,7 +10,7 @@ export const Toast = (props) => {
   const netInfo = useNetInfo();
   const themeContext = useContext(ThemeContext);
 
-  if (netInfo.isConnected) {
+  if (!netInfo.isConnected) {
     return (
       <Container>
         <StyledIcon
