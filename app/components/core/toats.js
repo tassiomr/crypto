@@ -44,7 +44,7 @@ const Container = styled.View`
   flex-direction: row;
   background-color: ${(props) => props.theme.danger};
   position: absolute;
-  bottom: 20;
+  bottom: 0;
 `;
 
 const StyledIcon = styled(Icon)`
