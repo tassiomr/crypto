@@ -1,6 +1,6 @@
 export const baseURL = 'https://api.coingecko.com/api/v3';
 
-export const END_POINTS = {
+export const endpoints = {
   ping: '/ping/',
   coinDetails: '/coins/',
   coinsLits: '/conins/list/',
