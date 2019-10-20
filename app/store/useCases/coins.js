@@ -15,7 +15,7 @@ export const getCoinsList = () => async (dispatch) => {
     const response = await axios.get(endpoints.coinsLits);
     return dispatch(successGetCoins(response));
   } catch (error) {
-    dispatch(failureGetCoins());
+    return dispatch(failureGetCoins());
   }
 };
 
