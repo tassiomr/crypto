@@ -1,5 +1,6 @@
 import { palette } from './palette';
 import { spacing, width, height } from './spacing';
+import { typography } from './typography';
 
 const spaces = {
   ...spacing,
@@ -16,6 +17,7 @@ const light = {
   title: palette.grey,
   subTitle: palette.lightGrey,
   spaces,
+  typography,
 };
 
 const dark = {
@@ -27,6 +29,7 @@ const dark = {
   title: palette.white,
   subTitle: palette.lightGrey,
   spaces,
+  typography,
 };
 
 export const theme = {
