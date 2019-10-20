@@ -6,6 +6,8 @@ export const GET_COIN_DETAILS = 'GET_COIN_DETAILS';
 export const SUCCESS_GET_COIN_DETAILS = 'SUCCESS_GET_COIN_DETAILS';
 export const FAILURE_GET_COIN_DETAILS = 'FAILURE_GET_COIN_DETAILS';
 
+export const FILTRED_COINS = 'FILTRED_COINS';
+
 export const getCoins = () => ({
   type: GET_COINS,
 });
@@ -32,4 +34,11 @@ export const successGetCoinDetails = (data) => ({
 export const failureGetCoinDetails = (error) => ({
   type: FAILURE_GET_COIN_DETAILS,
   payload: { error },
+});
+
+export const filtredCoinsSuccess = (data) => ({
+  type: FILTRED_COINS,
+  payload: {
+    data,
+  },
 });

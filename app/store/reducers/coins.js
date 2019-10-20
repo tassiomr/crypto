@@ -5,12 +5,14 @@ import {
   SUCCESS_GET_COIN_DETAILS,
   FAILURE_GET_COINS,
   FAILURE_GET_COIN_DETAILS,
+  FILTRED_COINS,
 } from '../actions/coins';
 
 const defaultState = {
   coinsList: [],
   isLoading: false,
   coinDetails: undefined,
+  filtredCoins: [],
   error: undefined,
 };
 
@@ -26,6 +28,8 @@ export default (state = defaultState, action) => {
     case FAILURE_GET_COINS:
     case FAILURE_GET_COIN_DETAILS:
       return { ...state, isLoading: false, error: action.payload.error };
+    case FILTRED_COINS:
+      return { ...state, filtredCoins: action.payload.data };
     default:
       return state;
   }
