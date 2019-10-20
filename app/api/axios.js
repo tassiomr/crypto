@@ -6,10 +6,7 @@ axios.create({
 });
 
 axios.interceptors.request.use(
-  async (config) => {
-    console.log('config', config);
-  },
-
+  async (config) => config,
   (error) => Promise.reject(error),
 );
 
