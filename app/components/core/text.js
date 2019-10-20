@@ -8,15 +8,20 @@ const Descriptions = (props) => (
   <StyledDescriptions>{props.text}</StyledDescriptions>
 );
 
-const StyledTitle = styled.Text`
+const DefaultText = styled.Text`
+  justify-content: center;
+  align-items: center;
+`;
+
+const StyledTitle = styled(DefaultText)`
   ${(props) => props.theme.typography.title};
 `;
 
-const StyledSubTitle = styled.Text`
+const StyledSubTitle = styled(DefaultText)`
   ${(props) => props.theme.typography.subTitle};
 `;
 
-const StyledDescriptions = styled(StyledSubTitle)`
+const StyledDescriptions = styled(DefaultText)`
   ${(props) => props.theme.typography.descriptions};
 `;
 
