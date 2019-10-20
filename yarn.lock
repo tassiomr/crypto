@@ -5519,6 +5519,11 @@ react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.4, react-is
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.10.2.tgz#984120fd4d16800e9a738208ab1fba422d23b5ab"
   integrity sha512-INBT1QEgtcCCgvccr5/86CfD71fw9EPmDxgiJX4I2Ddr6ZsV6iFXsuby+qWJPtmNuMY0zByTsG4468P7nHuNWA==
 
+react-native-device-info@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/react-native-device-info/-/react-native-device-info-4.0.1.tgz#bade972e7a995ac187a82745a458cba98b72dea0"
+  integrity sha512-a0Q/gwy1oQhu17CeMq9xMZ3Sl9foaj8hFwVuy9jieqkkoQwkHnPDI+R7bEW0MNMgUCPPrzzXvka+FLGOWVqacg==
+
 react-native-gesture-handler@^1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-1.4.1.tgz#c38d9e57637b95e221722a79f2bafac62e3aeb21"
@@ -5547,6 +5552,11 @@ react-native-safe-area-view@^0.14.1:
   integrity sha512-tOxHGQUN83MTmQB4ghoQkibqOdGiX4JQEmeyEv96MKWO/x8T2PJv84ECUos9hD3blPRQwVwSpAid1PPPhrVEaw==
   dependencies:
     debounce "^1.2.0"
+
+react-native-user-agent@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/react-native-user-agent/-/react-native-user-agent-1.0.4.tgz#2be1da43028b41118d6c0ab325a0dc2e2c7d3bf4"
+  integrity sha512-kSrtMeIHgDVBep2S88LNjyCsU6bWOOR66CJ+DU27EAOS5NOVHB8hLKylEALg5wI5fedGYb70xLsDMic29f7SNQ==
 
 react-native-vector-icons@^6.6.0:
   version "6.6.0"
