@@ -7,6 +7,7 @@ import {
   getCoinDetails,
   successGetCoinDetails,
   failureGetCoinDetails,
+  filtredCoinsSuccess,
 } from '../actions/coins';
 
 export const getCoinsList = () => async (dispatch) => {
@@ -15,7 +16,7 @@ export const getCoinsList = () => async (dispatch) => {
     const response = await axios.get(endpoints.coinsLits);
     return dispatch(successGetCoins(response));
   } catch (error) {
-    dispatch(failureGetCoins());
+    return dispatch(failureGetCoins());
   }
 };
 
@@ -27,4 +28,12 @@ export const coinDetails = (id) => async (dispatch) => {
   } catch (error) {
     return dispatch(failureGetCoinDetails());
   }
+};
+
+export const filtredCoins = (text) => (dispatch, getStore) => {
+  const { coinsList } = getStore().coins;
+
+  const coins = Object.assign([], coinsList);
+
+  dispatch(filtredCoinsSuccess(coins.filter((item) => item.name.includes(text))));
 };

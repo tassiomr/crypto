@@ -18,12 +18,7 @@ api.interceptors.request.use(
 );
 
 api.interceptors.response.use(
-  (response) => {
-    if (response.status === 200) {
-      return response.data;
-    }
-    return Promise.reject(response);
-  },
+  (response) => response.data,
   (error) => Promise.reject(error),
 );
 
