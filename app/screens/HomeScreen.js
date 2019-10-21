@@ -116,6 +116,7 @@ const ListEmptyComponent = styled.View`
 const ToolBar = styled.View`
   height: 45;
   width: 100%;
+  margin-top: ${(props) => props.theme.spaces.small};
   margin-bottom: ${(props) => props.theme.spaces.small};
   padding-left: ${(props) => props.theme.spaces.default};
   padding-right: ${(props) => props.theme.spaces.default};
