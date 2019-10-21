@@ -40,7 +40,9 @@ export const filtredCoins = (text) => (dispatch, getStore) => {
 
   const coins = Object.assign([], coinsList);
 
-  dispatch(filtredCoinsSuccess(coins.filter((item) => item.name.includes(text))));
+  const filter = coins.filter((item) => item.name.toLowerCase().includes(text.toLowerCase()));
+
+  dispatch(filtredCoinsSuccess(filter()));
 };
 
 export const getHistoryMarket = (id) => async (dispatch) => {
