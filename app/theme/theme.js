@@ -11,6 +11,7 @@ const spaces = {
 const baseTheme = {
   spaces,
   typography,
+  palette,
 };
 
 const light = {
