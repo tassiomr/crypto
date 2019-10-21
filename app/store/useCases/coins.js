@@ -1,5 +1,7 @@
+import numeral from 'numeral';
 import axios from '../../api/axios';
 import { endpoints } from '../../api/endpoints';
+
 import {
   getCoins,
   successGetCoins,
@@ -8,6 +10,9 @@ import {
   successGetCoinDetails,
   failureGetCoinDetails,
   filtredCoinsSuccess,
+  getMarketHistory,
+  getMarketHistorySuccess,
+  getMarketHistoryFailure,
 } from '../actions/coins';
 
 export const getCoinsList = () => async (dispatch) => {
@@ -16,7 +21,7 @@ export const getCoinsList = () => async (dispatch) => {
     const response = await axios.get(endpoints.coinsLits);
     return dispatch(successGetCoins(response));
   } catch (error) {
-    return dispatch(failureGetCoins());
+    return dispatch(failureGetCoins(error));
   }
 };
 
@@ -26,7 +31,7 @@ export const coinDetails = (id) => async (dispatch) => {
     const response = await axios.get(`${endpoints.coinDetails}${id}`);
     return dispatch(successGetCoinDetails(response));
   } catch (error) {
-    return dispatch(failureGetCoinDetails());
+    return dispatch(failureGetCoinDetails(error));
   }
 };
 
@@ -36,4 +41,50 @@ export const filtredCoins = (text) => (dispatch, getStore) => {
   const coins = Object.assign([], coinsList);
 
   dispatch(filtredCoinsSuccess(coins.filter((item) => item.name.includes(text))));
+};
+
+export const getHistoryMarket = (id) => async (dispatch) => {
+  try {
+    dispatch(getMarketHistory());
+    const response = await axios.get(
+      `${endpoints.coinDetails}${id}/market_chart?vs_currency=usd&days=1`,
+    );
+
+    let price = 0;
+    let marketCap = 0;
+    let volume = 0;
+
+    response.prices.forEach((item, index) => {
+      price += item[1];
+
+      if (index === response.prices.length - 1) {
+        price /= index;
+      }
+    });
+
+    response.market_caps.forEach((item, index) => {
+      marketCap += item[1];
+
+      if (index === response.market_caps.length - 1) {
+        marketCap /= index;
+      }
+    });
+
+    response.total_volumes.forEach((item, index) => {
+      volume += item[1];
+
+      if (index === response.prices.length - 1) {
+        volume /= index;
+      }
+    });
+    return dispatch(
+      getMarketHistorySuccess({
+        price: numeral(price).format('0,0.00000000'),
+        marketCap: numeral(marketCap).format('0,0.000000000'),
+        volume: numeral(volume).format('0,0.000000'),
+      }),
+    );
+  } catch (error) {
+    return dispatch(getMarketHistoryFailure(error));
+  }
 };
