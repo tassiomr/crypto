@@ -1,23 +1,28 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styled, { ThemeContext } from 'styled-components/native';
 import Icon from 'react-native-vector-icons/AntDesign';
 import Icon5 from 'react-native-vector-icons/Feather';
 import { Screen } from '../components/core/screen';
 import { Text } from '../components/core/text';
-import { changeTheme } from '../store/useCases/status';
+import { changeTheme, getApiStatus } from '../store/useCases/status';
 
 export const Info = (props) => {
-  const {
-    status: { theme },
-  } = useSelector((state) => state);
+  const { status } = useSelector((state) => state);
   const dispatch = useDispatch();
   const themeContext = useContext(ThemeContext);
+  const { theme } = status;
 
   const themeName = theme === 'dark' ? 'light' : 'dark';
 
+  useEffect(() => {
+    if (!status.apiStatus) {
+      dispatch(getApiStatus());
+    }
+  }, []);
+
   return (
-    <Screen isLoading={false}>
+    <Screen isLoading={status.isLoading} checkError={false}>
       <StyledIcon
         name="arrow-left"
         size={32}
@@ -26,6 +31,7 @@ export const Info = (props) => {
           props.navigation.goBack();
         }}
       />
+      <StyledText>{`Api Status: ${status.apiStatus}`}</StyledText>
       <Button onPress={() => dispatch(changeTheme(themeName))}>
         <Text.Title text="Dark Mode" />
         {theme === 'dark' && (
@@ -60,4 +66,12 @@ const Button = styled.TouchableOpacity`
 
 const StyledIcon = styled(Icon5)`
   padding: ${(props) => props.theme.spaces.default}px;
+`;
+
+const StyledText = styled.Text`
+  ${(props) => props.theme.typography.title}
+  color: ${(props) => props.theme.success};
+  padding-left: ${(props) => props.theme.spaces.default};
+  margin-bottom: ${(props) => props.theme.spaces.default};
+  
 `;
