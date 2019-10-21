@@ -36,7 +36,9 @@ export const CoinDetails = (props) => {
           }}
         />
         <Wrapper>
-          <Image source={coinDetails?.image?.small} />
+          {coinDetails?.image.small ? (
+            <Image source={coinDetails.image.small} />
+          ) : null}
           <Text.Title text={coin.name} />
           {coinDetails?.categories.length ? (
             <Text.SubTitle

@@ -18,7 +18,7 @@ export const Screen = (props) => {
 
 Screen.propTypes = {
   isLoading: PropTypes.bool.isRequired,
-  children: PropTypes.element.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 const View = styled.SafeAreaView`

@@ -13,6 +13,7 @@ export const spacing = {
     small: 12,
     default: 16,
     large: 20,
+    extraLarge: 24,
   },
 };
 

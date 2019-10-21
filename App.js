@@ -1,17 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
-import { Provider } from 'react-redux';
 
 import { theme } from './app/theme';
-import store from './app/store';
 import Routes from './app/routes';
+import { getTheme } from './app/store/useCases/status';
 
-const App = () => (
-  <ThemeProvider theme={theme.dark}>
-    <Provider store={store}>
+const App = () => {
+  const { status } = useSelector((state) => state);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getTheme());
+  }, []);
+
+  return (
+    <ThemeProvider theme={theme[status.theme]}>
       <Routes />
-    </Provider>
-  </ThemeProvider>
-);
+    </ThemeProvider>
+  );
+};
 
 export default App;

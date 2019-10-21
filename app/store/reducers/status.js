@@ -2,9 +2,11 @@ import {
   GET_STATUS,
   SUCCESS_GET_STATUS,
   FAILURE_GET_STATUS,
+  APP_THEME,
 } from '../actions/status';
 
 const defaultState = {
+  theme: 'light',
   apiStatus: undefined,
   isLoading: false,
   error: {},
@@ -18,6 +20,8 @@ export default (state = defaultState, action) => {
       return { ...state, isLoading: false, apiStatus: action.payload.data };
     case FAILURE_GET_STATUS:
       return { ...state, isLoading: false, error: action.payload.error };
+    case APP_THEME:
+      return { ...state, theme: action.payload.theme };
     default:
       return state;
   }
