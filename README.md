@@ -90,20 +90,21 @@
 
 - Run DEBUG
 
-  - android: in terminal run 'yarn android'
-  - ios:
+  #### android: in terminal run 'yarn android'
 
-    - Make sure you have installed the pods.
-      - Run in terminal 'cd ios'
-      - After in terminal 'pod install'
-      - Return to previous folder. Run in terminal 'cd ..'
-      - Run application with command 'yarn ios'
+  #### ios:
+  - Make sure you have installed the pods.
+    - Run in terminal 'cd ios'
+    - After in terminal 'pod install'
+    - Return to previous folder. Run in terminal 'cd ..'
+    - Run application with command 'yarn ios'
 
   - Run RELEASE
-    - android:
-      - apk: run at the terminal in the root folder the command: 'yarn build:apk'
-      - bundle release: run at the terminal in the root folder the command: 'yarn build:bundle'
-    - ios:
-      - not available
+
+    #### android:
+    - apk: run at the terminal in the root folder the command: 'yarn build:apk'
+    - bundle release: run at the terminal in the root folder the command: 'yarn build:bundle'
+    #### ios:
+    - not available
 
 * Make sure you have installed the project packages. Run in terminal 'yarn'.
