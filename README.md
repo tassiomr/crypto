@@ -24,37 +24,37 @@
 
 ### Additional Packages
 
-- @react-native-community/async-storage
+- @react-native-community/async-storage:
   - Asynchronous, persistent, key-value storage system for React Native.
-- @react-native-community/netinfo
+- @react-native-community/netinfo:
   - React Native Network Info API for iOS & Android
-- axios
+- axios:
   - Promise based HTTP client for the browser and node.js
-- numeral
+- numeral:
   - Format and manipulate numbers.
-- prop-types
+- prop-types:
   - Runtime type checking for React props and similar objects.
-- react-native-device-info
+- react-native-device-info:
   - Get device information using react-native
-- react-native-vector-icons
+- react-native-vector-icons:
   - Customizable Icons for React Native with support for NavBar/TabBar/ToolbarAndroid, image source and full styling.
-- react-navigation
+- react-navigation:
   - Routing and navigation for your React Native apps
-- react-native-gesture-handler
+- react-native-gesture-handler:
   - Experimental implementation of a new declarative API for gesture handling in react-native
-- react-native-reanimated
+- react-native-reanimated:
   - More powerful alternative to Animated library for React Native.
-- react-native-screen
+- react-native-screen:
   - First incomplete navigation solution for your react-native app.
-- react-navigation-stack
+- react-navigation-stack:
   - Stack navigator component for React Navigation
-- react-redux
+- react-redux:
   - Official React bindings for Redux
-- redux
+- redux:
   - Predictable state container for JavaScript apps
-- redux-thunk
+- redux-thunk:
   - Thunk middleware for Redux.
-- styled-components
+- styled-components:
   - Visual primitives for the component age. Use the best bits of ES6 and CSS to style your apps without stress
 
 ### Run and Build !?!
