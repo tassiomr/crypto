@@ -7,7 +7,7 @@ import store from './app/store';
 import Routes from './app/routes';
 
 const App = () => (
-  <ThemeProvider theme={theme.light}>
+  <ThemeProvider theme={theme.dark}>
     <Provider store={store}>
       <Routes />
     </Provider>

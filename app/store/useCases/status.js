@@ -8,6 +8,6 @@ export const getApiStatus = () => async (dispatch) => {
     const response = axios.get(endpoints.ping);
     return dispatch(getStatusSuccess(response));
   } catch (error) {
-    return dispatch(getStatusFailure());
+    return dispatch(getStatusFailure(error));
   }
 };
