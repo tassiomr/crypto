@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styled, { ThemeContext } from 'styled-components/native';
 import Icon from 'react-native-vector-icons/AntDesign';
@@ -6,6 +6,7 @@ import Icon5 from 'react-native-vector-icons/Feather';
 import { Screen } from '../components/core/screen';
 import { Text } from '../components/core/text';
 import { changeTheme, getApiStatus } from '../store/useCases/status';
+import deviceInfo from '../utils/deviceInfo';
 
 export const Info = (props) => {
   const { status } = useSelector((state) => state);
@@ -42,6 +43,13 @@ export const Info = (props) => {
         )}
       </Button>
       <Container>
+        <Text.SubTitle
+          text={`Device brand: ${deviceInfo.brand.toUpperCase()}`}
+        />
+        <Text.SubTitle
+          text={`Device OS: ${deviceInfo.OS} ${deviceInfo.sysVersion}`}
+        />
+        <Text.SubTitle text={`App Name: ${deviceInfo.appName}`} />
         <Text.SubTitle text="App Version: 1.0.0" />
         <Text.SubTitle text="Api by Coin Gecko: https://www.coingecko.com/api/" />
       </Container>

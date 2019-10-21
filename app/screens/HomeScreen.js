@@ -9,6 +9,7 @@ import { ListItem } from '../components/presentational/listItem';
 import { TextInput } from '../components/core/textInput';
 import { Text } from '../components/core/text';
 import { returnTitle, desc, cres } from '../utils/tools';
+import { getApiStatus } from '../store/useCases/status';
 
 export const HomeScreen = (props) => {
   const dispatch = useDispatch();
@@ -39,6 +40,7 @@ export const HomeScreen = (props) => {
 
   useEffect(() => {
     dispatch(getCoinsList());
+    dispatch(getApiStatus());
   }, []);
 
   useEffect(() => {
