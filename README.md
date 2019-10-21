@@ -90,9 +90,9 @@
 
 - Run DEBUG
 
-  #### android: in terminal run 'yarn android'
+  * android: in terminal run 'yarn android'
 
-  #### ios:
+  * ios:
   - Make sure you have installed the pods.
     - Run in terminal 'cd ios'
     - After in terminal 'pod install'
