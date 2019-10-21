@@ -134,6 +134,6 @@ const ToolBarLeftItem = styled.TouchableOpacity`
 `;
 
 const StyledText = styled.Text`
-  font-size: 12;
+  font-size: 14;
   color: ${(props) => props.theme.palette.white};
 `;
