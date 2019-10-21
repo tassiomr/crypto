@@ -12,8 +12,9 @@ import STORAGE from '../../utils/storage';
 export const getApiStatus = () => async (dispatch) => {
   try {
     dispatch(getStatus());
-    const response = axios.get(endpoints.ping);
-    return dispatch(getStatusSuccess(response));
+    const response = await axios.get(endpoints.ping);
+
+    return dispatch(getStatusSuccess(response.gecko_says));
   } catch (error) {
     return dispatch(getStatusFailure(error));
   }
