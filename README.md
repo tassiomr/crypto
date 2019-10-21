@@ -90,14 +90,15 @@
 
 - Run DEBUG
 
-  * android: in terminal run 'yarn android'
+  * android: 
+    - in terminal run 'yarn android'
 
   * ios:
-  - Make sure you have installed the pods.
-    - Run in terminal 'cd ios'
-    - After in terminal 'pod install'
-    - Return to previous folder. Run in terminal 'cd ..'
-    - Run application with command 'yarn ios'
+      - Make sure you have installed the pods.
+      - Run in terminal 'cd ios'
+      - After in terminal 'pod install'
+      - Return to previous folder. Run in terminal 'cd ..'
+      - Run application with command 'yarn ios'
 
   - Run RELEASE
 
