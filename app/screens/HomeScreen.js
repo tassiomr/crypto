@@ -68,12 +68,12 @@ export const HomeScreen = (props) => {
             setOrderByName(!orderByZto0);
             setLoadingOrder(true);
           }}>
-          <Text.Descriptions text={returnTitle(orderByZto0)} />
+          <StyledText>{returnTitle(orderByZto0)}</StyledText>
         </ToolBarLeftItem>
         <Icon
           name={'info'}
           color={theme.primary}
-          size={theme.spaces.iconSize.large}
+          size={theme.spaces.iconSize.extraLarge}
           onPress={() => props.navigation.navigate('Info')}
         />
       </ToolBar>
@@ -87,7 +87,7 @@ export const HomeScreen = (props) => {
         ItemSeparatorComponent={() => <Separator />}
         ListEmptyComponent={() => (
           <ListEmptyComponent>
-            <Text.Title text="search empty" />
+            <Text.Title text="the search return an empty list" />
           </ListEmptyComponent>
         )}
         renderItem={({ item }) => (
@@ -131,4 +131,9 @@ const ToolBarLeftItem = styled.TouchableOpacity`
   background-color: ${(props) => props.theme.primary};
   width: 120;
   border-radius: 50;
+`;
+
+const StyledText = styled.Text`
+  font-size: 12;
+  color: ${(props) => props.theme.palette.white};
 `;
