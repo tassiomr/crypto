@@ -1,6 +1,6 @@
-import React from 'react';
-import { Alert } from 'react-native';
-import styled from 'styled-components/native';
+import React, { useContext } from 'react';
+import { Alert, StatusBar } from 'react-native';
+import styled, { ThemeContext } from 'styled-components/native';
 import { useSelector } from 'react-redux';
 
 import PropTypes from 'prop-types';
@@ -10,11 +10,18 @@ import { Indicator } from './indicator';
 export const Screen = (props) => {
   const { status, coins } = useSelector((state) => state);
   const { isLoading, children, checkError } = props;
+  const themeContext = useContext(ThemeContext);
+
+  const contentStatusBar = status.theme === 'light' ? 'dark' : 'light';
 
   const error = status.error || coins.error;
 
   return (
     <View isLoading={isLoading}>
+      <StatusBar
+        backgroundColor={themeContext.backgroundColor}
+        barStyle={`${contentStatusBar}-content`}
+      />
       {!isLoading ? <>{children}</> : <Indicator isLoading={isLoading} large />}
       {error
         && checkError
