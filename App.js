@@ -9,6 +9,7 @@ import { getTheme } from './app/store/useCases/status';
 const App = () => {
   const { status } = useSelector((state) => state);
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(getTheme());
   }, []);
