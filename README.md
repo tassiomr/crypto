@@ -102,10 +102,10 @@
 
   - Run RELEASE
 
-    #### android:
-    - apk: run at the terminal in the root folder the command: 'yarn build:apk'
-    - bundle release: run at the terminal in the root folder the command: 'yarn build:bundle'
-    #### ios:
-    - not available
+    * android:
+      - apk: run at the terminal in the root folder the command: 'yarn build:apk'
+      - bundle release: run at the terminal in the root folder the command: 'yarn build:bundle'
+    * ios:
+      - not available
 
 * Make sure you have installed the project packages. Run in terminal 'yarn'.
