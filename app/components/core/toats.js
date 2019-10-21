@@ -10,20 +10,16 @@ export const Toast = (props) => {
   const netInfo = useNetInfo();
   const themeContext = useContext(ThemeContext);
 
-  if (!netInfo.isConnected) {
-    return (
-      <Container>
-        <StyledIcon
-          name="disconnect"
-          size={themeContext.spaces.iconSize.default}
-          color={themeContext.title}
-        />
-        <Text.Descriptions text={props.text} />
-      </Container>
-    );
-  }
-
-  return null;
+  return !netInfo.isConnected ? (
+    <Container>
+      <StyledIcon
+        name="disconnect"
+        size={themeContext.spaces.iconSize.default}
+        color={themeContext.title}
+      />
+      <Text.Descriptions text={props.text} />
+    </Container>
+  ) : null;
 };
 
 Toast.propTypes = {
