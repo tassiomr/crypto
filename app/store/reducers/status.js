@@ -9,7 +9,7 @@ const defaultState = {
   theme: 'light',
   apiStatus: undefined,
   isLoading: false,
-  error: {},
+  error: undefined,
 };
 
 export default (state = defaultState, action) => {
@@ -19,7 +19,12 @@ export default (state = defaultState, action) => {
     case SUCCESS_GET_STATUS:
       return { ...state, isLoading: false, apiStatus: action.payload.data };
     case FAILURE_GET_STATUS:
-      return { ...state, isLoading: false, error: action.payload.error };
+      return {
+        ...state,
+        isLoading: false,
+        error: action.payload.error,
+        apiStatus: 'Not currently available',
+      };
     case APP_THEME:
       return { ...state, theme: action.payload.theme };
     default:

@@ -15,13 +15,21 @@ import {
   getMarketHistoryFailure,
 } from '../actions/coins';
 
+import strings from '../../utils/strings';
+
 export const getCoinsList = () => async (dispatch) => {
   try {
     dispatch(getCoins());
     const response = await axios.get(endpoints.coinsLits);
     return dispatch(successGetCoins(response));
   } catch (error) {
-    return dispatch(failureGetCoins(error));
+    return dispatch(
+      failureGetCoins({
+        title: strings.coinList.title,
+        message: strings.coinList.message,
+        action: () => dispatch(getCoinsList()),
+      }),
+    );
   }
 };
 
@@ -31,7 +39,13 @@ export const coinDetails = (id) => async (dispatch) => {
     const response = await axios.get(`${endpoints.coinDetails}${id}`);
     return dispatch(successGetCoinDetails(response));
   } catch (error) {
-    return dispatch(failureGetCoinDetails(error));
+    return dispatch(
+      failureGetCoinDetails({
+        title: strings.coinDetails.title,
+        message: strings.coinDetails.message,
+        action: () => dispatch(coinDetails(id)),
+      }),
+    );
   }
 };
 
@@ -87,6 +101,12 @@ export const getHistoryMarket = (id) => async (dispatch) => {
       }),
     );
   } catch (error) {
-    return dispatch(getMarketHistoryFailure(error));
+    return dispatch(
+      getMarketHistoryFailure({
+        title: strings.market.title,
+        message: strings.market.message,
+        action: () => dispatch(getHistoryMarket(id)),
+      }),
+    );
   }
 };
