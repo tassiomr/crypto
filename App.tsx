@@ -1,11 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Alert, View, StyleSheet } from 'react-native';
+import { Button, Text } from 'react-native-paper';
+import Wallet from './src/views/wallet';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Wallet />
     </View>
   );
 }
